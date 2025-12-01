@@ -49,6 +49,12 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     is_expressive_design_enabled=true
     
+# Animation override
+PERF_ANIM_OVERRIDE ?= false
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
+
 # Bypass charging
 BYPASS_CHARGE_SUPPORTED ?= false
 PRODUCT_SYSTEM_PROPERTIES += \
