@@ -15,7 +15,7 @@ then
     aversion="16"
     md5=$(md5sum $file_path | awk '{ print $1 }');
     datetime=$(grep ro\.build\.date\.utc ./out/target/product/$DEVICE/system/build.prop | cut -d= -f2);
-    download="https://sourceforge.net/projects/infinity-x/files/${DEVICE}/${aversion}/${variant}/${file_name}";
+    download="https://sourceforge.net/projects/infinity-ota-zorn/files/${DEVICE}/${aversion}/${variant}/${file_name}";
     echo -e "{\n\t\"response\": [\n\t\t{\n\t\t\t\"filename\": \"$file_name\",\n\t\t\t\"download\": \"$download\",\n\t\t\t\"timestamp\": $datetime,\n\t\t\t\"md5\": \"$md5\",\n\t\t\t\"size\": $file_size,\n\t\t\t\"version\": \"$version\"\n\t\t}\n\t]\n}" > $file_path.json
   fi
 fi
